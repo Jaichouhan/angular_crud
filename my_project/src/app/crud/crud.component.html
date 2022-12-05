@@ -46,18 +46,27 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form [formGroup]="noteForm">
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label"
                 >Note Title:</label
               >
-              <input type="text" class="form-control" id="recipient-name" />
+              <input
+                type="text"
+                class="form-control"
+                id="recipient-name"
+                formControlName="title"
+              />
             </div>
             <div class="mb-3">
               <label for="message-text" class="col-form-label"
                 >Note Description:</label
               >
-              <textarea class="form-control" id="message-text"></textarea>
+              <textarea
+                class="form-control"
+                id="message-text"
+                formControlName="description"
+              ></textarea>
             </div>
           </form>
         </div>
@@ -69,7 +78,9 @@
           >
             Close
           </button>
-          <button type="button" class="btn btn-primary">ADD NOTES</button>
+          <button type="button" class="btn btn-primary" (click)="addNote()">
+            ADD NOTES
+          </button>
         </div>
       </div>
     </div>
