@@ -39,7 +39,9 @@ export class CrudComponent implements OnInit {
     this.noteObj.note_title= value.title
     this.noteObj.note_desc= value.description
     this.__crud.addNote(this.noteObj).then((res) => {
-      console.log(res)
+      console.log("done")
+    }).catch((err) => {
+      console.log(err,"error show")
     })
   }
   
